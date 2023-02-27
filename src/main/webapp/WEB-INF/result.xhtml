@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui=" ">
+<head>
+    <title>Quiz Result</title>
+</head>
+<body>
+<h1>Quiz Result</h1>
+<p>You answered #{quizBean.numCorrectAnswers} out of #{quizBean.numQuestions} questions correctly.</p>
+<p>Here are the answers you gave:</p>
+<ul>
+    <ui:repeat value="#{quizBean.answeredOptions}" var="option">
+        <li>#{option}</li>
+    </ui:repeat>
+</ul>
+<h:commandButton value="Try Again" action="#{quizBean.setCurrentQuestionIndex(0)}"/>
+</body>
+</html>

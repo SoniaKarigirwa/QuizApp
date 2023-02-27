@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui=" " xmlns:f=" ">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/styles.css" />
+    <title>Quiz</title>
+</h:head>
+<body>
+<h1>Quiz</h1>
+<h3>Question #{quizBean.currentQuestionIndex + 1} of #{quizBean.numQuestions}</h3>
+<p>#{quizBean.currentQuestion}</p>
+<h:form>
+    <ul>
+        <ui:repeat value="#{quizBean.currentQuestionOptions}" var="option">
+            <li>
+                <h:selectOneRadio value="#{selectedOption}">
+                    <f:selectItem itemValue="#{option}" itemLabel="#{option}" />
+                </h:selectOneRadio>
+            </li>
+        </ui:repeat>
+    </ul>
+    <h:commandButton value="Submit" action="#{quizBean.submitAnswer(selectedOption)}"/>
+</h:form>
+</body>
+</html>
