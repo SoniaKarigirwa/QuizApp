@@ -8,7 +8,7 @@
       </options>
     </properties>
     <root id="archive" name="demo-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="JSF - QuizApp:war exploded" />
+      <element id="artifact" artifact-name="JSF-QuizApp:war exploded" />
     </root>
   </artifact>
 </component>
